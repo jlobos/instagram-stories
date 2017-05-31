@@ -1,0 +1,32 @@
+{
+  "name": "instagram-stories",
+  "version": "0.0.0",
+  "description": "Instagram Stories",
+  "license": "MIT",
+  "repository": "jlobos/instagram-stories",
+  "author": "Jesus Lobos <jlobitu@gmail.com> (https://jlobos.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "xo": {
+    "semicolon": false,
+    "space": true
+  },
+  "keywords": [
+    "stories",
+    "story",
+    "facebook",
+    "instagram"
+  ],
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "xo": "^0.18.2"
+  }
+}
