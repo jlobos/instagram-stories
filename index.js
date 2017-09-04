@@ -20,7 +20,7 @@ exports.getStories = ({
     host: 'i.instagram.com'
   }
 }) => (
-  fetch(`https://i.instagram.com/api/v1/feed/user/${id}/reel_media`, {
+  fetch(`https://i.instagram.com/api/v1/feed/user/${id}/reel_media/`, {
     headers: Object.assign(headers, {
       cookie: `sessionid=${sessionid}; ds_user_id=${userid}`
     })
