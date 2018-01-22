@@ -2,7 +2,8 @@ import test from 'ava'
 import {
   getUserByUsername,
   getMediaByCode,
-  getStories
+  getStories,
+  getStoriesFeed
 } from './index'
 
 const {SESSIONID} = process.env
@@ -27,4 +28,13 @@ test('getStories', async t => {
   t.is(user.username, 'instagram')
   t.is(status, 'ok')
   t.true(Array.isArray(items))
+})
+
+test('getStoriesFeed', async t => {
+  const {tray, status} = await getStoriesFeed(
+    {userid: 1284161654, sessionid: SESSIONID}
+  )
+
+  t.is(status, 'ok')
+  t.true(Array.isArray(tray))
 })

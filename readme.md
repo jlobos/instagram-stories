@@ -16,6 +16,7 @@ npm install --save instagram-stories
 ```js
 const {
   getStories,
+  getStoriesFeed,
   getMediaByCode,
   getUserByUsername
 } = require('instagram-stories')
@@ -27,6 +28,11 @@ const {
 getStories({ id: 25025320, userid: 1284161654, sessionid: '' }).then(stories => {
   console.log(stories)
 })
+
+// Get stories of people you follow
+getStoriesFeed({ userid: 1284161654, sessionid: '' }).then(feed => {
+  console.log(feed)
+}) 
 
 getMediaByCode('BUu14BdBkO5').then(media => {
   console.log(media)
