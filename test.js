@@ -38,3 +38,10 @@ test('getStoriesFeed', async t => {
   t.is(status, 'ok')
   t.true(Array.isArray(tray))
 })
+
+test('getMediaByLocation', async t => {
+  const {locationId} = await getMediaByLocation('292188415')
+  t.is(location.id, '292188415')
+  t.is(location.username, 'Eiffel Tower')
+  t.is(location.slug, 'eiffel-tower')
+})
