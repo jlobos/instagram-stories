@@ -43,8 +43,8 @@ getUserByUsername('instagram').then(({ user }) => {
   console.log(user.id)
 })
 
-getMediaByLocation('292188415').then(({ user }) => {
-  console.log(location.name)
+getMediaByLocation('292188415').then(({ location }) => {
+  console.log(location.location.name)
 })
 ```
 

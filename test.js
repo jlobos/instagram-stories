@@ -41,7 +41,7 @@ test('getStoriesFeed', async t => {
 
 test('getMediaByLocation', async t => {
   const {locationId} = await getMediaByLocation('292188415')
-  t.is(location.id, '292188415')
-  t.is(location.username, 'Eiffel Tower')
-  t.is(location.slug, 'eiffel-tower')
+  t.is(location.location.id, '292188415')
+  t.is(location.location.username, 'Eiffel Tower')
+  t.is(location.location.slug, 'eiffel-tower')
 })
