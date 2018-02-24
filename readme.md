@@ -18,7 +18,8 @@ const {
   getStories,
   getStoriesFeed,
   getMediaByCode,
-  getUserByUsername
+  getUserByUsername,
+  getMediaByLocation
 } = require('instagram-stories')
 
 // Get stories of Instagram
@@ -40,6 +41,10 @@ getMediaByCode('BUu14BdBkO5').then(media => {
 
 getUserByUsername('instagram').then(({ user }) => {
   console.log(user.id)
+})
+
+getMediaByLocation('292188415').then(({ user }) => {
+  console.log(location.name)
 })
 ```
 
