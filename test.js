@@ -3,7 +3,8 @@ import {
   getUserByUsername,
   getMediaByCode,
   getStories,
-  getStoriesFeed
+  getStoriesFeed,
+  getMediaByLocation
 } from './index'
 
 const {SESSIONID} = process.env
@@ -37,4 +38,11 @@ test('getStoriesFeed', async t => {
 
   t.is(status, 'ok')
   t.true(Array.isArray(tray))
+})
+
+test('getMediaByLocation', async t => {
+  const {location} = await getMediaByLocation('292188415')
+  t.is(location.location.id, '292188415')
+  t.is(location.location.username, 'Eiffel Tower')
+  t.is(location.location.slug, 'eiffel-tower')
 })
