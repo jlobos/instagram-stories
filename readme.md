@@ -1,6 +1,6 @@
 # instagram-stories
 
-[![Build Status](https://travis-ci.com/konstantinov/instagram-stories.svg?branch=master)
+[![Build Status](https://travis-ci.com/konstantinov/instagram-stories.svg?branch=master)](https://travis-ci.com/github/konstantinov/instagram-stories)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 Get the Instagram Stories in Node.js and Browser
