@@ -29,8 +29,15 @@ exports.getUserByUsername = ({
     .then(({graphql}) => graphql)
 )
 
-exports.getMediaByCode = code => (
-  fetch(`https://www.instagram.com/p/${code}/?__a=1`)
+exports.getMediaByCode = ({
+  code,
+  sessionid,
+  userid,
+  headers = defaultHeaders
+}) => (
+  fetch(`https://www.instagram.com/p/${code}/?__a=1`, {
+    headers: getHeaders(headers, sessionid, userid)
+  })
     .then(res => res.json())
 )
 

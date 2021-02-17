@@ -1,6 +1,7 @@
 import test from 'ava'
 import {
   getUserByUsername,
+  getMediaByCode,
   getStories
 } from './index'
 
@@ -12,6 +13,12 @@ test('getUserByUsername', async t => {
     )
   t.is(user.id, '25025320')
   t.is(user.username, 'instagram')
+})
+
+test('getMediaByCode', async t => {
+  const {graphql} = await getMediaByCode(
+    {code: 'BUu14BdBkO5', userid: USERID, sessionid: SESSIONID})
+  t.is(graphql.shortcode_media.id, '1526394270041654201')
 })
 
 test('getStories', async t => {
