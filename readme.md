@@ -30,15 +30,15 @@ getStories({ id: 25025320, userid: 1284161654, sessionid: '' }).then(stories => 
 })
 
 // Get stories of people you follow
-getStoriesFeed({ userid: 1284161654, sessionid: '' }).then(feed => {
+getStoriesFeed({ userid: 1284161654, userid: 1284161654, sessionid: '' }).then(feed => {
   console.log(feed)
-}) 
+})
 
-getMediaByCode('BUu14BdBkO5').then(media => {
+getMediaByCode({ code: 'BUu14BdBkO5', userid: 1284161654, sessionid: '' }).then(media => {
   console.log(media)
 })
 
-getUserByUsername('instagram').then(({ user }) => {
+getUserByUsername({ username: 'instagram', userid: 1284161654, sessionid: '' }).then(({ user }) => {
   console.log(user.id)
 })
 ```
