@@ -2,6 +2,7 @@ import test from 'ava'
 import {
   getUserByUsername,
   getMediaByCode,
+  getStoriesFeed,
   getStories
 } from './index'
 
@@ -30,4 +31,13 @@ test('getStories', async t => {
   t.is(user.username, 'instagram')
   t.is(status, 'ok')
   t.true(Array.isArray(items))
+})
+
+test('getStoriesFeed', async t => {
+  const {tray, status} = await getStoriesFeed(
+    {userid: USERID, sessionid: SESSIONID}
+  )
+
+  t.is(status, 'ok')
+  t.true(Array.isArray(tray))
 })
