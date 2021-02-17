@@ -1,9 +1,13 @@
 const fetch = require('isomorphic-fetch')
 
 const defaultHeaders = {
-  'x-ig-capabilities': '3w==',
-  'user-agent': 'Instagram 9.5.1 (iPhone9,2; iOS 10_0_2; en_US; en-US; scale=2.61; 1080x1920) AppleWebKit/420+',
-  host: 'i.instagram.com'
+  'sec-ch-ua': '"Google Chrome";v="87", " Not;A Brand";v="99", "Chromium";v="87"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-site',
+  'x-ig-app-id': '936619743392459',
+  'x-ig-www-claim': 'hmac.AR0A6WzcCoXWstKAUuy1gRbCQFUs8FoZCp3ap2UMk_KQNBSH'
 }
 
 const getHeaders = (headers, sessionid, userid) => {
@@ -12,9 +16,17 @@ const getHeaders = (headers, sessionid, userid) => {
   })
 }
 
-exports.getUserByUsername = username => (
-  fetch(`https://www.instagram.com/${username}/?__a=1`)
+exports.getUserByUsername = ({
+  username,
+  sessionid,
+  userid,
+  headers = defaultHeaders
+}) => (
+  fetch(`https://www.instagram.com/${username}/?__a=1`, {
+    headers: getHeaders(headers, sessionid, userid)
+  })
     .then(res => res.json())
+    .then(({graphql}) => graphql)
 )
 
 exports.getMediaByCode = code => (
@@ -28,10 +40,11 @@ exports.getStories = ({
   userid,
   headers = defaultHeaders
 }) => (
-  fetch(`https://i.instagram.com/api/v1/feed/user/${id}/reel_media/`, {
+  fetch(`https://i.instagram.com/api/v1/feed/reels_media/?reel_ids=${id}`, {
     headers: getHeaders(headers, sessionid, userid)
   })
   .then(res => res.json())
+  .then(({status, reels_media: {0: stories}}) => ({status, ...stories}))
 )
 
 exports.getStoriesFeed = ({
