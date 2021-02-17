@@ -51,7 +51,7 @@ exports.getStories = ({
     headers: getHeaders(headers, sessionid, userid)
   })
   .then(res => res.json())
-  .then(({status, reels_media: {0: stories}}) => ({status, ...stories}))
+  .then(({status, reels_media: {0: stories}}) => Object.assign({}, {status}, stories))
 )
 
 exports.getStoriesFeed = ({
