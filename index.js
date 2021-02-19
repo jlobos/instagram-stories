@@ -65,7 +65,15 @@ exports.getStoriesFeed = ({
   .then(res => res.json())
 )
 
-exports.getMediaByLocation = locationId => (
-  fetch(`https://www.instagram.com/explore/locations/${locationId}/?__a=1`)
+exports.getMediaByLocation = ({
+  id,
+  sessionid,
+  userid,
+  headers = defaultHeaders
+}) => (
+  fetch(`https://www.instagram.com/explore/locations/${id}/?__a=1`, {
+    headers: getHeaders(headers, sessionid, userid)
+  })
     .then(res => res.json())
+    .then(({graphql}) => graphql)
 )
