@@ -1,9 +1,9 @@
 # instagram-stories
 
-[![Build Status](https://travis-ci.com/konstantinov/instagram-stories.svg?branch=master)](https://travis-ci.com/github/konstantinov/instagram-stories)
+[![Build Status](https://travis-ci.org/jlobos/instagram-stories.svg?branch=master)](https://travis-ci.org/github/jlobos/instagram-stories)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-Get the Instagram Stories in Node.js and Browser
+Get the Instagram Stories in Node.js
 
 ## Install
 
@@ -45,4 +45,4 @@ getUserByUsername({ username: 'instagram', userid: 1284161654, sessionid: '' }).
 
 ## License
 
-MIT © [Jesús Lobos](https://jlobos.com/)
+MIT © Jesús Lobos, Dmitry Konstantinov
