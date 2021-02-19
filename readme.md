@@ -43,7 +43,7 @@ getUserByUsername({ username: 'instagram', userid: 1284161654, sessionid: '' }).
   console.log(user.id)
 })
 
-getMediaByLocation('292188415').then(({ location }) => {
+getMediaByLocation({ id: '292188415', userid: 1284161654, sessionid: '' }).then(({ location }) => {
   console.log(location.name)
 })
 ```
