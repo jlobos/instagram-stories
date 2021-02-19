@@ -1,10 +1,10 @@
 {
   "name": "instagram-stories",
-  "version": "1.0.1",
-  "description": "Instagram Stories",
+  "version": "1.1.1",
+  "description": "Unofficial package for scraping instagram stories",
   "license": "MIT",
   "repository": "jlobos/instagram-stories",
-  "author": "Jesus Lobos <jlobitu@gmail.com> (https://jlobos.com/)",
+  "author": "Jesus Lobos <jlobitu@gmail.com>",
   "main": "index.js",
   "scripts": {
     "test": "xo && ava"
