@@ -42,6 +42,10 @@ getMediaByCode({ code: 'BUu14BdBkO5', userid: 1284161654, sessionid: '' }).then(
 getUserByUsername({ username: 'instagram', userid: 1284161654, sessionid: '' }).then(({ user }) => {
   console.log(user.id)
 })
+
+getMediaByLocation('292188415').then(({ location }) => {
+  console.log(location.name)
+})
 ```
 
 ## License

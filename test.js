@@ -2,8 +2,9 @@ import test from 'ava'
 import {
   getUserByUsername,
   getMediaByCode,
+  getStories,
   getStoriesFeed,
-  getStories
+  getMediaByLocation
 } from './index'
 
 const {SESSIONID, USERID} = process.env
@@ -42,4 +43,11 @@ test('getStoriesFeed', async t => {
 
   t.is(status, 'ok')
   t.true(Array.isArray(tray))
+})
+
+test('getMediaByLocation', async t => {
+  const {location} = await getMediaByLocation('292188415')
+  t.is(location.id, '292188415')
+  t.is(location.name, 'Eiffel Tower')
+  t.is(location.slug, 'eiffel-tower')
 })
