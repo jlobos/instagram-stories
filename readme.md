@@ -1,6 +1,6 @@
 # instagram-stories
 
-[![Build Status](https://travis-ci.org/jlobos/instagram-stories.svg?branch=master)](https://travis-ci.org/jlobos/instagram-stories)
+[![Build Status](https://travis-ci.com/konstantinov/instagram-stories.svg?branch=master)](https://travis-ci.com/github/konstantinov/instagram-stories)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 Get the Instagram Stories in Node.js and Browser
@@ -30,15 +30,15 @@ getStories({ id: 25025320, userid: 1284161654, sessionid: '' }).then(stories => 
 })
 
 // Get stories of people you follow
-getStoriesFeed({ userid: 1284161654, sessionid: '' }).then(feed => {
+getStoriesFeed({ userid: 1284161654, userid: 1284161654, sessionid: '' }).then(feed => {
   console.log(feed)
-}) 
+})
 
-getMediaByCode('BUu14BdBkO5').then(media => {
+getMediaByCode({ code: 'BUu14BdBkO5', userid: 1284161654, sessionid: '' }).then(media => {
   console.log(media)
 })
 
-getUserByUsername('instagram').then(({ user }) => {
+getUserByUsername({ username: 'instagram', userid: 1284161654, sessionid: '' }).then(({ user }) => {
   console.log(user.id)
 })
 ```
