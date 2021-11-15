@@ -47,7 +47,7 @@ exports.getStories = ({
   userid,
   headers = defaultHeaders
 }) => (
-  fetch(`https://i.instagram.com/api/v1/feed/reels_media/?reel_ids=${id}`, {
+  fetch(`https://i.instagram.com/api/v1/feed/user/${id}/story/`, {
     headers: getHeaders(headers, sessionid, userid)
   })
   .then(res => res.json())
