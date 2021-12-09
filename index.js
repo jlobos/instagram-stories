@@ -51,7 +51,7 @@ exports.getStories = ({
     headers: getHeaders(headers, sessionid, userid)
   })
   .then(res => res.json())
-  .then(({status, reels_media: {0: stories}}) => Object.assign({}, {status}, stories || {items: []}))
+  .then(({status, reel}) => ({status, items: reel ? reel.items : []}))
 )
 
 exports.getStoriesFeed = ({
@@ -75,5 +75,5 @@ exports.getMediaByLocation = ({
     headers: getHeaders(headers, sessionid, userid)
   })
     .then(res => res.json())
-    .then(({graphql}) => graphql)
+    .then(({native_location_data}) => native_location_data)
 )
