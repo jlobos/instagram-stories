@@ -4,7 +4,8 @@ import {
   getMediaByCode,
   getStories,
   getStoriesFeed,
-  getMediaByLocation
+  getMediaByLocation,
+  getUserHighlights
 } from './index'
 
 const {SESSIONID, USERID} = process.env
@@ -17,10 +18,18 @@ test('getUserByUsername', async t => {
   t.is(user.username, 'instagram')
 })
 
+test('getUserHighlights', async t => {
+  const {status, tray} = await getUserHighlights({id: '25025320', userid: USERID, sessionid: SESSIONID})
+
+  t.is(status, 'ok')
+  t.is(Boolean(tray.some(({id}) => id === 'highlight:17953051600687015')), true)
+})
+
 test('getMediaByCode', async t => {
-  const {graphql} = await getMediaByCode(
+  const {items} = await getMediaByCode(
     {code: 'BUu14BdBkO5', userid: USERID, sessionid: SESSIONID})
-  t.is(graphql.shortcode_media.id, '1526394270041654201')
+
+  t.is(items[0].pk, 1526394270041654300)
 })
 
 test('getStories', async t => {

@@ -1,6 +1,6 @@
 {
   "name": "instagram-stories",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Unofficial package for scraping instagram stories",
   "license": "MIT",
   "repository": "jlobos/instagram-stories",

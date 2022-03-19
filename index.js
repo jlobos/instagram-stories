@@ -75,5 +75,14 @@ exports.getMediaByLocation = ({
     headers: getHeaders(headers, sessionid, userid)
   })
     .then(res => res.json())
-    .then(({native_location_data}) => native_location_data)
+    .then(({native_location_data: location}) => location)
 )
+
+exports.getUserHighlights = ({
+  id,
+  sessionid,
+  userid,
+  headers = defaultHeaders
+}) => fetch(`https://i.instagram.com/api/v1/highlights/${id}/highlights_tray/`, {
+  headers: getHeaders(headers, sessionid, userid)
+}).then(res => res.json())
