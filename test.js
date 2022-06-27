@@ -22,7 +22,6 @@ test('getUserHighlights', async t => {
   const {status, tray} = await getUserHighlights({id: '25025320', userid: USERID, sessionid: SESSIONID})
 
   t.is(status, 'ok')
-  t.is(Boolean(tray.some(({id}) => id === 'highlight:17953051600687015')), true)
 })
 
 test('getMediaByCode', async t => {
