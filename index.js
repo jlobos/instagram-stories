@@ -22,11 +22,11 @@ exports.getUserByUsername = ({
   userid,
   headers = defaultHeaders
 }) => (
-  fetch(`https://www.instagram.com/${username}/?__a=1`, {
+  fetch(`https://i.instagram.com/api/v1/users/web_profile_info/?username=${username}`, {
     headers: getHeaders(headers, sessionid, userid)
   })
     .then(res => res.json())
-    .then(({graphql}) => graphql)
+    .then(({ data }) => data)
 )
 
 exports.getMediaByCode = ({
