@@ -35,6 +35,7 @@ getStoriesFeed({ userid: 1284161654, userid: 1284161654, sessionid: '' }).then(f
   console.log(feed)
 })
 
+// temporary broken. Looking for working solution
 getMediaByCode({ code: 'BUu14BdBkO5', userid: 1284161654, sessionid: '' }).then(media => {
   console.log(media)
 })
